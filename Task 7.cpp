@@ -36,18 +36,21 @@ int main()
 		std::cin >> arr[i];
 	std::cout << "Choose 1 if you want to see Bubble sorting algorithm or choose 2 for Selestion: ";
 	std::cin >> a;
+	void(*foo)(int *, int);
 	if (a == 1) {
-		BubbleSorting(arr, size);
+		foo = BubbleSorting;
 	}
 	else {
-		SelectionSorting(arr, size);
+		foo = SelectionSorting;
 	}
+	foo(arr, size);
 std::cout << "ARRAY" << std::endl;
 	for (int i = 0; i < size; ++i) {
 		
 		std::cout << arr[i] << " ";
 		
 	}
+	
 	std::cout << std::endl;
 	return 0;
 }
